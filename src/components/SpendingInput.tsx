@@ -1,5 +1,5 @@
 import { useState } from 'react';
-import { SpendingInput as SpendingInputType } from '../types';
+import type { SpendingInput as SpendingInputType } from '../types';
 
 interface Props {
   onCalculate: (spending: SpendingInputType) => void;

@@ -1,7 +1,7 @@
 import { useState } from 'react';
 import SpendingInput from './components/SpendingInput';
 import CardComparison from './components/CardComparison';
-import { SpendingInput as SpendingInputType, BenefitCalculation } from './types';
+import type { SpendingInput as SpendingInputType, BenefitCalculation } from './types';
 import { creditCards } from './data/creditCards';
 import { calculateAllCards } from './utils/calculator';
 

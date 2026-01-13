@@ -1,5 +1,5 @@
 import { useState } from 'react';
-import { BenefitCalculation, SortOption } from '../types';
+import type { BenefitCalculation, SortOption } from '../types';
 import BenefitsBreakdown from './BenefitsBreakdown';
 
 interface Props {

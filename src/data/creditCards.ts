@@ -1,4 +1,4 @@
-import { CreditCard } from '../types';
+import type { CreditCard } from '../types';
 
 export const creditCards: CreditCard[] = [
   {

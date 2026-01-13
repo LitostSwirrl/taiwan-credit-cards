@@ -1,4 +1,4 @@
-import { BenefitCalculation } from '../types';
+import type { BenefitCalculation } from '../types';
 import { useEffect } from 'react';
 
 interface Props {
@@ -7,7 +7,7 @@ interface Props {
 }
 
 export default function BenefitsBreakdown({ calculation, onClose }: Props) {
-  const { card, breakdown, totalCashback, pointsValue, netAnnualBenefit, annualFee, warnings } =
+  const { card, breakdown, totalCashback, pointsValue, netAnnualBenefit, warnings } =
     calculation;
 
   // Close on Escape key
