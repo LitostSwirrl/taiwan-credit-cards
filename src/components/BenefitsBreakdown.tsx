@@ -70,7 +70,7 @@ export default function BenefitsBreakdown({ calculation, onClose }: Props) {
           {/* Summary Stats */}
           <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
             <div className="p-6 bg-gradient-to-br from-primary-50 to-primary-100 rounded-xl">
-              <p className="text-sm font-medium text-navy-600 mb-2">Net Annual Benefit</p>
+              <p className="text-sm font-medium text-navy-600 mb-2">年度淨收益</p>
               <p className={`text-3xl font-display font-bold ${
                 netAnnualBenefit >= 0 ? 'text-primary-700' : 'text-red-600'
               }`}>
@@ -81,7 +81,7 @@ export default function BenefitsBreakdown({ calculation, onClose }: Props) {
             </div>
 
             <div className="p-6 bg-gradient-to-br from-navy-50 to-navy-100 rounded-xl">
-              <p className="text-sm font-medium text-navy-600 mb-2">Total Cashback</p>
+              <p className="text-sm font-medium text-navy-600 mb-2">總現金回饋</p>
               <p className="text-3xl font-display font-bold text-navy-700">
                 {totalCashback.toLocaleString()}
                 <span className="text-lg ml-1">TWD</span>
@@ -89,14 +89,14 @@ export default function BenefitsBreakdown({ calculation, onClose }: Props) {
             </div>
 
             <div className="p-6 bg-gradient-to-br from-gold-50 to-gold-100 rounded-xl">
-              <p className="text-sm font-medium text-navy-600 mb-2">Points Value</p>
+              <p className="text-sm font-medium text-navy-600 mb-2">點數價值</p>
               <p className="text-3xl font-display font-bold text-gold-700">
                 {pointsValue.toLocaleString()}
                 <span className="text-lg ml-1">TWD</span>
               </p>
               {card.points && (
                 <p className="text-xs text-pearl-600 mt-1">
-                  {calculation.totalPoints.toLocaleString()} points @ {card.points.value} TWD each
+                  {calculation.totalPoints.toLocaleString()} 點 @ 每點 {card.points.value} 元
                 </p>
               )}
             </div>
@@ -105,7 +105,7 @@ export default function BenefitsBreakdown({ calculation, onClose }: Props) {
           {/* Warnings */}
           {warnings.length > 0 && (
             <div className="p-4 bg-amber-50 border-l-4 border-amber-400 rounded-lg">
-              <p className="font-semibold text-amber-800 mb-2">⚠️ Important Requirements</p>
+              <p className="font-semibold text-amber-800 mb-2">⚠️ 重要注意事項</p>
               {warnings.map((warning, i) => (
                 <p key={i} className="text-sm text-amber-700">
                   • {warning}
@@ -117,7 +117,7 @@ export default function BenefitsBreakdown({ calculation, onClose }: Props) {
           {/* Top Earning Categories */}
           <div>
             <h3 className="text-xl font-display font-semibold text-navy-900 mb-4">
-              Top Earning Categories
+              回饋最高類別
             </h3>
             <div className="space-y-3">
               {topCategories.map((category) => {
@@ -140,10 +140,10 @@ export default function BenefitsBreakdown({ calculation, onClose }: Props) {
                       />
                     </div>
                     <div className="flex items-center justify-between text-xs text-pearl-600">
-                      <span>Spent: {category.spent.toLocaleString()} TWD</span>
+                      <span>消費：{category.spent.toLocaleString()} TWD</span>
                       {category.hitCap && category.capAmount && (
                         <span className="text-amber-600 font-medium">
-                          ⚠️ Hit monthly cap of {category.capAmount.toLocaleString()} TWD
+                          ⚠️ 已達到每月上限 {category.capAmount.toLocaleString()} 元
                         </span>
                       )}
                     </div>
@@ -156,17 +156,17 @@ export default function BenefitsBreakdown({ calculation, onClose }: Props) {
           {/* Detailed Breakdown Table */}
           <div>
             <h3 className="text-xl font-display font-semibold text-navy-900 mb-4">
-              Complete Breakdown
+              完整明細
             </h3>
             <div className="overflow-x-auto">
               <table className="w-full text-sm">
                 <thead>
                   <tr className="border-b-2 border-pearl-200">
-                    <th className="text-left py-3 px-4 font-semibold text-navy-800">Category</th>
-                    <th className="text-right py-3 px-4 font-semibold text-navy-800">Spent</th>
-                    <th className="text-right py-3 px-4 font-semibold text-navy-800">Cashback</th>
-                    <th className="text-right py-3 px-4 font-semibold text-navy-800">Points</th>
-                    <th className="text-right py-3 px-4 font-semibold text-navy-800">Total</th>
+                    <th className="text-left py-3 px-4 font-semibold text-navy-800">類別</th>
+                    <th className="text-right py-3 px-4 font-semibold text-navy-800">消費</th>
+                    <th className="text-right py-3 px-4 font-semibold text-navy-800">現金回饋</th>
+                    <th className="text-right py-3 px-4 font-semibold text-navy-800">點數</th>
+                    <th className="text-right py-3 px-4 font-semibold text-navy-800">總計</th>
                   </tr>
                 </thead>
                 <tbody className="divide-y divide-pearl-100">
@@ -190,7 +190,7 @@ export default function BenefitsBreakdown({ calculation, onClose }: Props) {
                       </tr>
                     ))}
                   <tr className="font-bold bg-pearl-50">
-                    <td className="py-3 px-4 text-navy-900">TOTAL</td>
+                    <td className="py-3 px-4 text-navy-900">總計</td>
                     <td className="py-3 px-4 text-right text-navy-900">
                       {breakdown.reduce((sum, b) => sum + b.spent, 0).toLocaleString()}
                     </td>
@@ -211,29 +211,29 @@ export default function BenefitsBreakdown({ calculation, onClose }: Props) {
 
           {/* Fees */}
           <div className="p-6 bg-pearl-50 rounded-xl">
-            <h3 className="text-lg font-display font-semibold text-navy-900 mb-3">Fees</h3>
+            <h3 className="text-lg font-display font-semibold text-navy-900 mb-3">費用</h3>
             <div className="space-y-2 text-sm">
               <div className="flex justify-between">
-                <span className="text-navy-700">Annual Fee:</span>
+                <span className="text-navy-700">年費：</span>
                 <span className="font-semibold text-navy-900">
                   {card.fees.annual === 0 ? (
-                    <span className="text-primary-600">FREE</span>
+                    <span className="text-primary-600">免費</span>
                   ) : (
                     `${card.fees.annual.toLocaleString()} TWD`
                   )}
                 </span>
               </div>
               {card.fees.firstYearWaived && (
-                <p className="text-xs text-primary-600">✓ First year waived</p>
+                <p className="text-xs text-primary-600">✓ 首年免年費</p>
               )}
               {card.fees.waiverCondition && (
-                <p className="text-xs text-pearl-600">Waiver: {card.fees.waiverCondition}</p>
+                <p className="text-xs text-pearl-600">免年費條件：{card.fees.waiverCondition}</p>
               )}
               <div className="flex justify-between">
-                <span className="text-navy-700">Foreign Transaction Fee:</span>
+                <span className="text-navy-700">國外交易手續費：</span>
                 <span className="font-semibold text-navy-900">
                   {card.fees.foreignTransaction === 0
-                    ? <span className="text-primary-600">FREE</span>
+                    ? <span className="text-primary-600">免費</span>
                     : `${(card.fees.foreignTransaction * 100).toFixed(1)}%`}
                 </span>
               </div>
@@ -242,16 +242,16 @@ export default function BenefitsBreakdown({ calculation, onClose }: Props) {
 
           {/* Perks */}
           <div>
-            <h3 className="text-xl font-display font-semibold text-navy-900 mb-4">Perks & Benefits</h3>
+            <h3 className="text-xl font-display font-semibold text-navy-900 mb-4">優惠與權益</h3>
             <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
               {card.perks.airportLounge && (
                 <PerkCard
                   icon="✈️"
-                  title="Airport Lounge Access"
+                  title="機場貴賓室"
                   details={[
-                    `Provider: ${card.perks.airportLounge.provider}`,
-                    `${card.perks.airportLounge.visitsPerYear} visits/year`,
-                    card.perks.airportLounge.guestAllowed ? 'Guest allowed' : 'No guest',
+                    `提供商：${card.perks.airportLounge.provider}`,
+                    `每年 ${card.perks.airportLounge.visitsPerYear} 次`,
+                    card.perks.airportLounge.guestAllowed ? '可攜賓客' : '不可攜賓客',
                   ]}
                 />
               )}
@@ -259,11 +259,11 @@ export default function BenefitsBreakdown({ calculation, onClose }: Props) {
               {card.perks.travelInsurance && (
                 <PerkCard
                   icon="🛡️"
-                  title="Travel Insurance"
+                  title="旅遊保險"
                   details={[
-                    `Overseas: ${(card.perks.travelInsurance.overseas / 1000000).toFixed(0)}M TWD`,
-                    `Domestic: ${(card.perks.travelInsurance.domestic / 1000000).toFixed(0)}M TWD`,
-                    card.perks.travelInsurance.rentalCarCDW && 'Rental car CDW',
+                    `海外：${(card.perks.travelInsurance.overseas / 1000000).toFixed(0)}百萬元`,
+                    `國內：${(card.perks.travelInsurance.domestic / 1000000).toFixed(0)}百萬元`,
+                    card.perks.travelInsurance.rentalCarCDW && '租車碰撞險',
                   ].filter(Boolean) as string[]}
                 />
               )}
@@ -271,10 +271,10 @@ export default function BenefitsBreakdown({ calculation, onClose }: Props) {
               {card.perks.purchaseProtection && (
                 <PerkCard
                   icon="🛒"
-                  title="Purchase Protection"
+                  title="購物保障"
                   details={[
-                    `Coverage: ${card.perks.purchaseProtection.coverageAmount.toLocaleString()} TWD`,
-                    `${card.perks.purchaseProtection.daysOfCoverage} days`,
+                    `保障額度：${card.perks.purchaseProtection.coverageAmount.toLocaleString()} 元`,
+                    `${card.perks.purchaseProtection.daysOfCoverage} 天`,
                   ]}
                 />
               )}
@@ -282,38 +282,38 @@ export default function BenefitsBreakdown({ calculation, onClose }: Props) {
               {card.perks.zeroInstallment && (
                 <PerkCard
                   icon="💳"
-                  title="0% Installment"
+                  title="零利率分期"
                   details={[
-                    `Available: ${card.perks.zeroInstallment.availableMonths.join(', ')} months`,
+                    `可分期：${card.perks.zeroInstallment.availableMonths.join('、')} 期`,
                     card.perks.zeroInstallment.minimumAmount &&
-                      `Minimum: ${card.perks.zeroInstallment.minimumAmount.toLocaleString()} TWD`,
+                      `最低金額：${card.perks.zeroInstallment.minimumAmount.toLocaleString()} 元`,
                   ].filter(Boolean) as string[]}
                 />
               )}
 
               {card.perks.conciergeService && (
-                <PerkCard icon="🎩" title="Concierge Service" details={['24/7 concierge support']} />
+                <PerkCard icon="🎩" title="禮賓服務" details={['24/7 禮賓服務']} />
               )}
             </div>
           </div>
 
           {/* Data Attribution */}
           <div className="pt-6 border-t border-pearl-200 text-xs text-pearl-500 space-y-1">
-            <p>Data last updated: {card.lastUpdated}</p>
+            <p>資料更新日期：{card.lastUpdated}</p>
             {card.sourceUrl && (
               <p>
-                Source:{' '}
+                資料來源：{' '}
                 <a
                   href={card.sourceUrl}
                   target="_blank"
                   rel="noopener noreferrer"
                   className="text-primary-600 hover:text-primary-700 underline"
                 >
-                  {card.bank} Official Website
+                  {card.bank} 官方網站
                 </a>
               </p>
             )}
-            {card.notes && <p className="text-navy-600 font-medium">Note: {card.notes}</p>}
+            {card.notes && <p className="text-navy-600 font-medium">備註：{card.notes}</p>}
           </div>
         </div>
       </div>

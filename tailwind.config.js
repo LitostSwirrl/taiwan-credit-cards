@@ -62,7 +62,7 @@ export default {
       },
       fontFamily: {
         display: ['Cormorant Garamond', 'serif'],
-        sans: ['DM Sans', 'system-ui', 'sans-serif'],
+        sans: ['Noto Sans TC', 'DM Sans', 'system-ui', 'sans-serif'],
       },
       boxShadow: {
         'glass': '0 8px 32px 0 rgba(5, 150, 105, 0.1)',

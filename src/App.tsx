@@ -39,34 +39,33 @@ export default function App() {
           <div className="text-center space-y-6 animate-fade-in">
             <div className="inline-flex items-center gap-2 px-4 py-2 bg-white/10 backdrop-blur-sm rounded-full border border-white/20">
               <span className="w-2 h-2 bg-primary-400 rounded-full animate-pulse" />
-              <span className="text-white/90 text-sm font-medium">Powered by AI Calculations</span>
+              <span className="text-white/90 text-sm font-medium">AI 智能計算</span>
             </div>
 
             <h1 className="text-4xl md:text-6xl lg:text-7xl font-display font-bold text-white leading-tight">
-              Find Your Perfect
+              尋找最適合您的
               <br />
               <span className="text-transparent bg-clip-text bg-gradient-to-r from-primary-300 to-gold-400">
-                Taiwan Credit Card
+                台灣信用卡
               </span>
             </h1>
 
             <p className="text-xl md:text-2xl text-white/80 max-w-3xl mx-auto font-light">
-              Calculate real benefits based on your spending patterns. Compare cashback, points, and perks
-              from Taiwan's top credit cards.
+              根據您的消費模式計算真實回饋。比較台灣頂級信用卡的現金回饋、紅利點數與優惠。
             </p>
 
             <div className="flex flex-wrap items-center justify-center gap-6 text-white/70 text-sm">
               <div className="flex items-center gap-2">
                 <span className="text-2xl">✓</span>
-                <span>Real Taiwan card data</span>
+                <span>真實台灣卡片資料</span>
               </div>
               <div className="flex items-center gap-2">
                 <span className="text-2xl">✓</span>
-                <span>Mobile payment bonuses</span>
+                <span>行動支付加碼</span>
               </div>
               <div className="flex items-center gap-2">
                 <span className="text-2xl">✓</span>
-                <span>Cap calculations</span>
+                <span>上限計算</span>
               </div>
             </div>
           </div>
@@ -103,7 +102,7 @@ export default function App() {
                 onClick={handleRecalculate}
                 className="px-6 py-3 bg-white hover:bg-pearl-50 border border-pearl-200 rounded-lg font-medium text-navy-700 transition-colors duration-200"
               >
-                ← Edit Spending
+                ← 修改消費金額
               </button>
             </div>
 
@@ -116,24 +115,24 @@ export default function App() {
           <div className="max-w-5xl mx-auto">
             <div className="glass glass-hover rounded-2xl p-8">
               <h2 className="text-2xl font-display font-semibold text-navy-900 text-center mb-8">
-                Why Use Our Calculator?
+                為什麼使用我們的計算器？
               </h2>
 
               <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
                 <FeatureCard
                   icon="🎯"
-                  title="Accurate Calculations"
-                  description="Handles Taiwan-specific features like cashback caps, tiered rates, and mobile payment bonuses."
+                  title="精確計算"
+                  description="處理台灣特有功能，如現金回饋上限、分級利率和行動支付加碼。"
                 />
                 <FeatureCard
                   icon="🔒"
-                  title="Privacy First"
-                  description="All calculations happen in your browser. We don't collect or store your spending data."
+                  title="隱私優先"
+                  description="所有計算都在您的瀏覽器中進行。我們不會收集或儲存您的消費資料。"
                 />
                 <FeatureCard
                   icon="⚡"
-                  title="Real-Time Results"
-                  description="Instantly compare all cards and see which ones maximize your benefits."
+                  title="即時結果"
+                  description="立即比較所有卡片，查看哪些卡片能最大化您的回饋。"
                 />
               </div>
             </div>
@@ -147,26 +146,23 @@ export default function App() {
           <div className="space-y-6">
             <div className="text-center space-y-4">
               <h3 className="text-xl font-display font-semibold text-white">
-                Important Disclaimer
+                重要聲明
               </h3>
               <div className="max-w-3xl mx-auto space-y-2 text-sm">
                 <p>
-                  ⚠️ Calculations are estimates based on data as of January 2026. This is for
-                  informational purposes only and is not financial advice.
+                  ⚠️ 計算結果為基於 2026 年 1 月資料的估算。此為資訊用途，並非財務建議。
                 </p>
                 <p>
-                  Always verify current terms, rates, and conditions with the issuing bank before
-                  applying. Credit card terms and promotions change frequently.
+                  申請前請務必向發卡銀行確認當前條款、利率與條件。信用卡條款與優惠經常變更。
                 </p>
                 <p>
-                  This calculator is not affiliated with any banks or card issuers. Card data is
-                  sourced from public information and may not reflect current offers.
+                  本計算器與任何銀行或發卡機構無關。卡片資料來自公開資訊，可能無法反映當前優惠。
                 </p>
               </div>
             </div>
 
             <div className="border-t border-white/10 pt-6 text-center text-xs">
-              <p>© 2026 Taiwan Credit Card Calculator. Built for educational purposes.</p>
+              <p>© 2026 台灣信用卡計算器。僅供教學用途。</p>
             </div>
           </div>
         </div>

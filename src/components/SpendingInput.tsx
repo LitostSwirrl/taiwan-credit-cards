@@ -99,43 +99,43 @@ export default function SpendingInput({ onCalculate }: Props) {
           <span className="text-2xl">💳</span>
         </div>
         <div>
-          <h2 className="text-2xl font-display font-semibold text-navy-900">Your Monthly Spending</h2>
-          <p className="text-sm text-pearl-600">Enter your average monthly expenses</p>
+          <h2 className="text-2xl font-display font-semibold text-navy-900">您的每月消費</h2>
+          <p className="text-sm text-pearl-600">輸入您的平均每月支出</p>
         </div>
       </div>
 
       {/* Essential Categories */}
       <div className="space-y-4 mb-6">
-        <h3 className="text-sm font-semibold text-navy-700 uppercase tracking-wide">Essential</h3>
+        <h3 className="text-sm font-semibold text-navy-700 uppercase tracking-wide">基本類別</h3>
 
         <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
           <InputField
             icon={ICONS.dining}
-            label="Dining"
+            label="餐飲"
             value={spending.dining}
             onChange={(v) => updateSpending('dining', v)}
-            hint="Restaurants, cafes, food delivery"
+            hint="餐廳、咖啡廳、外送"
           />
 
           <InputField
             icon={ICONS.convenienceStore}
-            label="Convenience Stores"
+            label="便利商店"
             value={spending.convenienceStore}
             onChange={(v) => updateSpending('convenienceStore', v)}
-            hint="7-11, FamilyMart, OK, Hi-Life"
+            hint="7-11、全家、OK、萊爾富"
           />
 
           <InputField
             icon={ICONS.hypermarket}
-            label="Hypermarkets"
+            label="量販超市"
             value={spending.hypermarket}
             onChange={(v) => updateSpending('hypermarket', v)}
-            hint="Costco, Carrefour, RT-Mart"
+            hint="好市多、家樂福、大潤發"
           />
 
           <InputField
             icon={ICONS.gas}
-            label="Gas"
+            label="加油"
             value={spending.gas}
             onChange={(v) => updateSpending('gas', v)}
           />
@@ -145,12 +145,12 @@ export default function SpendingInput({ onCalculate }: Props) {
       {/* Online Shopping with Platform Breakdown */}
       <div className="space-y-4 mb-6">
         <h3 className="text-sm font-semibold text-navy-700 uppercase tracking-wide flex items-center gap-2">
-          {ICONS.onlineShopping} Online Shopping
+          {ICONS.onlineShopping} 網路購物
         </h3>
 
         <div className="grid grid-cols-2 gap-3">
           <InputField
-            label="Shopee 蝦皮"
+            label="蝦皮購物 Shopee"
             value={spending.onlineShopping.shopee || 0}
             onChange={(v) => updateOnlineShopping('shopee', v)}
             small
@@ -162,20 +162,20 @@ export default function SpendingInput({ onCalculate }: Props) {
             small
           />
           <InputField
-            label="PChome"
+            label="PChome 購物"
             value={spending.onlineShopping.pchome || 0}
             onChange={(v) => updateOnlineShopping('pchome', v)}
             small
           />
           <InputField
-            label="Other Platforms"
+            label="其他平台"
             value={spending.onlineShopping.other || 0}
             onChange={(v) => updateOnlineShopping('other', v)}
             small
           />
         </div>
         <div className="text-right">
-          <span className="text-sm text-pearl-600">Total: </span>
+          <span className="text-sm text-pearl-600">總計： </span>
           <span className="text-lg font-semibold text-primary-700">
             {spending.onlineShopping.total.toLocaleString()} TWD
           </span>
@@ -189,7 +189,7 @@ export default function SpendingInput({ onCalculate }: Props) {
           onClick={() => setShowMobilePayment(!showMobilePayment)}
           className="w-full flex items-center justify-between p-4 rounded-lg bg-primary-50 hover:bg-primary-100 transition-colors"
         >
-          <span className="text-sm font-semibold text-navy-700">📱 Mobile Payment Usage (%)</span>
+          <span className="text-sm font-semibold text-navy-700">📱 行動支付使用比例（%）</span>
           <span className="text-2xl">{showMobilePayment ? '−' : '+'}</span>
         </button>
 
@@ -234,7 +234,7 @@ export default function SpendingInput({ onCalculate }: Props) {
           onClick={() => setShowAdvanced(!showAdvanced)}
           className="w-full flex items-center justify-between p-4 rounded-lg bg-navy-50 hover:bg-navy-100 transition-colors"
         >
-          <span className="text-sm font-semibold text-navy-700">Advanced Categories</span>
+          <span className="text-sm font-semibold text-navy-700">進階類別</span>
           <span className="text-2xl">{showAdvanced ? '−' : '+'}</span>
         </button>
 
@@ -243,63 +243,63 @@ export default function SpendingInput({ onCalculate }: Props) {
             <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
               <InputField
                 icon={ICONS.departmentStore}
-                label="Department Stores"
+                label="百貨公司"
                 value={spending.departmentStore}
                 onChange={(v) => updateSpending('departmentStore', v)}
-                hint="SOGO, 新光三越, 微風"
+                hint="SOGO、新光三越、微風"
               />
               <InputField
                 icon={ICONS.drugstore}
-                label="Drugstores"
+                label="藥妝店"
                 value={spending.drugstore}
                 onChange={(v) => updateSpending('drugstore', v)}
-                hint="Watsons, Cosmed"
+                hint="屈臣氏、康是美"
               />
               <InputField
                 icon={ICONS.parking}
-                label="Parking"
+                label="停車費"
                 value={spending.parking}
                 onChange={(v) => updateSpending('parking', v)}
               />
               <InputField
                 icon={ICONS.publicTransport}
-                label="Public Transport"
+                label="大眾運輸"
                 value={spending.publicTransport}
                 onChange={(v) => updateSpending('publicTransport', v)}
-                hint="悠遊卡 auto-load"
+                hint="悠遊卡自動加值"
               />
             </div>
 
             <h4 className="text-sm font-semibold text-navy-700 uppercase tracking-wide mt-6">
-              {ICONS.utilities} Utilities & Bills
+              {ICONS.utilities} 水電瓦斯與帳單
             </h4>
             <div className="grid grid-cols-2 md:grid-cols-3 gap-3">
               <InputField
-                label="Electricity"
+                label="電費"
                 value={spending.electricity}
                 onChange={(v) => updateSpending('electricity', v)}
                 small
               />
               <InputField
-                label="Water"
+                label="水費"
                 value={spending.water}
                 onChange={(v) => updateSpending('water', v)}
                 small
               />
               <InputField
-                label="Gas Utility"
+                label="瓦斯費"
                 value={spending.gasUtility}
                 onChange={(v) => updateSpending('gasUtility', v)}
                 small
               />
               <InputField
-                label="Internet"
+                label="網路費"
                 value={spending.internet}
                 onChange={(v) => updateSpending('internet', v)}
                 small
               />
               <InputField
-                label="Mobile Phone"
+                label="手機費"
                 value={spending.mobilePhone}
                 onChange={(v) => updateSpending('mobilePhone', v)}
                 small
@@ -307,36 +307,36 @@ export default function SpendingInput({ onCalculate }: Props) {
             </div>
 
             <h4 className="text-sm font-semibold text-navy-700 uppercase tracking-wide mt-6">
-              {ICONS.travel} Travel & Entertainment
+              {ICONS.travel} 旅遊與娛樂
             </h4>
             <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
               <InputField
-                label="Domestic Travel"
+                label="國內旅遊"
                 value={spending.domesticTravel}
                 onChange={(v) => updateSpending('domesticTravel', v)}
               />
               <InputField
-                label="International Travel"
+                label="國外旅遊"
                 value={spending.internationalTravel}
                 onChange={(v) => updateSpending('internationalTravel', v)}
               />
               <InputField
                 icon={ICONS.entertainment}
-                label="Entertainment"
+                label="娛樂活動"
                 value={spending.entertainment}
                 onChange={(v) => updateSpending('entertainment', v)}
-                hint="Movies, concerts, events"
+                hint="電影、演唱會、活動"
               />
               <InputField
-                label="Streaming Services"
+                label="串流服務"
                 value={spending.streaming}
                 onChange={(v) => updateSpending('streaming', v)}
-                hint="Netflix, Spotify, etc."
+                hint="Netflix、Spotify 等"
               />
             </div>
 
             <InputField
-              label="Other Expenses"
+              label="其他支出"
               value={spending.other}
               onChange={(v) => updateSpending('other', v)}
             />
@@ -348,11 +348,11 @@ export default function SpendingInput({ onCalculate }: Props) {
         type="submit"
         className="w-full bg-gradient-to-r from-primary-600 to-primary-700 hover:from-primary-700 hover:to-primary-800 text-white font-semibold py-4 px-8 rounded-xl shadow-lg hover:shadow-xl transition-all duration-300 transform hover:scale-[1.02]"
       >
-        <span className="text-lg">Calculate Best Cards</span>
+        <span className="text-lg">計算最佳信用卡</span>
       </button>
 
       <p className="text-xs text-pearl-500 text-center mt-4">
-        All amounts in TWD per month
+        所有金額為每月新台幣
       </p>
     </form>
   );
