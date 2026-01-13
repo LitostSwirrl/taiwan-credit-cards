@@ -3,9 +3,6 @@
 @tailwind utilities;
 
 @layer base {
-  * {
-    @apply border-border;
-  }
   body {
     @apply bg-gradient-to-br from-blue-50 via-white to-green-50 min-h-screen font-sans antialiased;
   }
